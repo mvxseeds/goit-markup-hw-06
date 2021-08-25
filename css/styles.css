@@ -3,7 +3,7 @@
   --secondary-text-color: #212121;
   --accent: #2196f3;
   --lighter: #ffffff;
-  --footer-links-lighter: rgba(255, 255, 255, 0.6);
+  --footer-lighter-60: rgba(255, 255, 255, 0.6);
   --bg-dark: #2f303a;
   --bg-secondary: #f5f4fa;
   --header-border-low: #ececec;
@@ -641,7 +641,7 @@ address {
 }
 
 .footer .contact.link {
-  color: var(--footer-links-lighter);
+  color: var(--footer-lighter-60);
 
   display: block;
   margin-bottom: 9px;
@@ -655,9 +655,13 @@ address {
   margin-bottom: 0;
 }
 
+.join-us {
+  margin-right: 93px;
+}
+
 .join-us .text,
 .subscribe .text {
-  display: inline-block;
+  display: block;
   margin-bottom: 20px;
 
   color: var(--lighter);
@@ -684,7 +688,72 @@ address {
 }
 
 .subscribe.form {
-  margin-left: 93px;
+  min-width: 570px;
+}
+
+.subscribe.form .form-field {
+  display: inline-block;
+}
+
+.subscribe.form .form-input {
+  min-height: 50px;
+  margin-right: 12px;
+  padding: 15px 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background: transparent;
+
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  color: var(--footer-lighter-60);
+}
+
+.subscribe.form .form-input::placeholder {
+  color: var(--footer-lighter-60);
+}
+
+.subscribe.form .form-label {
+  visibility: none;
+
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.subscribe.form .button.primary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.subscribe .button.primary .text {
+  display: inline-flex;
+  margin-bottom: 0;
+  margin-right: 10px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+
+  letter-spacing: 0.06em;
+
+  text-transform: none;
+}
+
+.icon-subscribe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  fill: var(--lighter);
 }
 
 /* Backdrop modal window */
@@ -727,6 +796,8 @@ address {
   border-radius: 4px;
 
   background-color: var(--lighter);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 
   transition-property: transform;
   transition-delay: 250ms;
@@ -760,7 +831,7 @@ address {
 
   transition-property: fill;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal .icon-close:hover,
@@ -803,10 +874,26 @@ address {
   color: var(--primary-text-color);
 }
 
-.form.order .form-field input {
+.form.order .form-input {
   padding: 12px;
   padding-left: 40px;
   height: 40px;
+  outline: none;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form.order .form-field:hover .form-input,
+.form.order .form-field:focus-within .form-input,
+.form.order .form-field:hover .form-textarea,
+.form.order .form-field:focus-within .form-textarea {
+  border-color: var(--accent);
 }
 
 .icon-field {
@@ -824,7 +911,7 @@ address {
 
   transition-property: fill;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field:hover .icon-field,
@@ -832,19 +919,28 @@ address {
   fill: var(--accent);
 }
 
-textarea {
+.form-textarea {
   resize: none;
   max-height: 120px;
   padding: 12px 16px;
+  outline: none;
 
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
 
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+
   color: var(--primary-text-color);
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-textarea::placeholder {
+.form-textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 

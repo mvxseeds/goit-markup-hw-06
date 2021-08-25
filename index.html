@@ -409,10 +409,17 @@
         <form class="subscribe form">
           <b class="text">Подпишитесь на рассылку</b>
           <div class="form-field">
+            <input class="form-input" type="email" name="mail" id="mail" placeholder="E-mail" />
             <label class="form-label" for="mail">E-mail</label>
-            <input class="form-input" type="email" name="mail" id="mail" />
           </div>
-          <button class="button primary" type="submit">Подписаться</button>
+          <button class="button primary" type="submit">
+            <span class="text">Подписаться</span>
+            <span class="icon-subscribe">
+              <svg width="24" height="24">
+                <use href="./images/sprite.svg#submit"></use>
+              </svg>
+            </span>
+          </button>
         </form>
       </div>
     </footer>
@@ -427,7 +434,7 @@
           <b class="text">Оставьте свои данные, мы вам перезвоним</b>
           <div class="form-field">
             <label for="" class="form-label">Имя</label>
-            <input type="text" name="" id="" />
+            <input class="form-input" type="text" name="" id="" />
             <span class="icon-field">
               <svg width="18" height="18">
                 <use href="./images/sprite.svg#contact"></use>
@@ -436,7 +443,7 @@
           </div>
           <div class="form-field">
             <label for="" class="form-label">Телефон</label>
-            <input type="tel" name="" id="" />
+            <input class="form-input" type="tel" name="" id="" />
             <span class="icon-field">
               <svg width="18" height="18">
                 <use href="./images/sprite.svg#phone"></use>
@@ -445,7 +452,7 @@
           </div>
           <div class="form-field">
             <label for="" class="form-label">Почта</label>
-            <input type="email" name="" id="" />
+            <input class="form-input" type="email" name="" id="" />
             <span class="icon-field">
               <svg width="18" height="18">
                 <use href="./images/sprite.svg#mail"></use>
@@ -454,7 +461,13 @@
           </div>
           <div class="form-field">
             <label for="" class="form-label">Комментарий</label>
-            <textarea name="" id="" rows="10" placeholder="Введите текст"></textarea>
+            <textarea
+              class="form-textarea"
+              name=""
+              id=""
+              rows="10"
+              placeholder="Введите текст"
+            ></textarea>
           </div>
           <label class="form-label policy">
             <input class="checkbox" type="checkbox" name="policy" />
