@@ -703,6 +703,7 @@ address {
   min-height: 50px;
   margin-right: 12px;
   padding: 15px 15px;
+  outline: none;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
