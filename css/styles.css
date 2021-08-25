@@ -559,7 +559,7 @@ address {
   color: var(--lighter);
 
   transition: 250ms;
-  transition-property: all;
+  transition-property: bottom;
   transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
 }
 
@@ -723,7 +723,7 @@ address {
   transform: scale(1) translate(-50%, -50%);
   transform-origin: top left;
   width: 528px;
-  height: 580px;
+  min-height: 580px;
   border-radius: 4px;
 
   background-color: var(--lighter);
@@ -742,28 +742,38 @@ address {
   transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
 }
 
-/* edit style in sprite while editing icons!
-add circle border - only one fill exist in svg cross */
 .icon-close {
   position: fixed;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   top: 0;
   right: 0;
   transform: translate(-8px, 8px);
+
   width: 30px;
   height: 30px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
 }
 
-/* TODO: add next
 .modal .icon-close:hover,
-.modal .icon-close:focus,
-*/
+.modal .icon-close:focus {
+  fill: var(--accent);
+}
 
 .form.order {
   text-align: center;
 }
 
 .form.order .form-field {
+  position: relative;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -795,9 +805,111 @@ add circle border - only one fill exist in svg cross */
 
 .form.order .form-field input {
   padding: 12px;
+  padding-left: 40px;
   height: 40px;
+}
+
+.icon-field {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  bottom: 0;
+  left: 0;
+  margin: 11px 12px;
+
+  width: 18px;
+  height: 18px;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+}
+
+.form-field:hover .icon-field,
+.form-field:focus-within .icon-field {
+  fill: var(--accent);
 }
 
 textarea {
   resize: none;
+  max-height: 120px;
+  padding: 12px 16px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: var(--primary-text-color);
+}
+
+textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.form.order .form-label.policy {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 30px;
+
+  width: 425px;
+}
+
+.icon-check {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+
+  border: 2px solid var(--secondary-text-color);
+  border-radius: 2px;
+  fill: var(--lighter);
+}
+
+.checkbox {
+  visibility: none;
+
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.checkbox:checked + .icon-check {
+  border-color: transparent;
+  background-color: var(--accent);
+  background-origin: border-box;
+}
+
+.form-label.policy .text,
+.form-label.policy .link {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+
+  letter-spacing: 0.03em;
+
+  color: var(--primary-text-color);
+}
+
+.form-label.policy .link {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.form.order .button.primary {
+  padding: 10px 55px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+
+  letter-spacing: 0.06em;
 }
