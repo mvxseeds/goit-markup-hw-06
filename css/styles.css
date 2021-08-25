@@ -470,6 +470,10 @@ address {
   height: inherit;
   border: 1px solid var(--icon-fill);
   border-radius: 4px;
+
+  transition: 250ms;
+  transition-property: border-color;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
 }
 
 .regular .icon-client {
